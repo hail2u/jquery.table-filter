@@ -1,6 +1,6 @@
 /**
  * jQuery Plugin: Table Filter - version 0.1.1
- * Insert a input form for filtering rows dinamically.
+ * Insert a input form for filtering table rows dinamically.
  *
  * Copyright (c) 2009 Kyo Nagashima <kyo@hail2u.net>
  * This library licensed under MIT license:
