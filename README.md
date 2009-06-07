@@ -12,17 +12,14 @@ Usage
 =====
 
 Insert to all table:
---------------------
 
     $("table").addTableFilter();
 
 Insert to "#table1" only:
--------------------------
 
     $("#table1").addTableFilter();
 
 Insert with custom label text and size:
----------------------------------------
 
     $("table").addTableFilter({
       labelText: "Filtering Words: ",
