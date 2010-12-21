@@ -1,7 +1,7 @@
 TITLE
 =====
 
-jQuery Plugin: Table Filter - version 0.1.1
+jQuery Plugin: Table Filter - version 0.1.2
 
 DESCRIPTION
 ===========
@@ -49,6 +49,6 @@ You can style inserted elements like this:
 LICENSE
 =======
 
-Copyright (c) 2009 Kyo Nagashima <kyo@hail2u.net><br />
-This library licensed under MIT license:<br />
-http://opensource.org/licenses/mit-license.php<br />
+Copyright (c) 2009 Kyo Nagashima <kyo@hail2u.net>  
+This library licensed under MIT license:  
+http://opensource.org/licenses/mit-license.php
