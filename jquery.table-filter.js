@@ -34,8 +34,8 @@
       $("<p/>").addClass("formTableFilter").append(label).append(input).insertBefore(this);
 
       // Bind filtering function
-      $("#" + id).keyup(function (e) {
-        var words = this.value.toLowerCase().split(" ");
+      $("#" + id).delayBind("keyup", function (e) {
+        var words = $(this).val().toLowerCase().split(" ");
         $("#" + tgt + " tbody tr").each(function () {
           var s = $(this).html().toLowerCase().replace(/<.+?>/g, "").replace(/\s+/g, " ");
           var state = 0;
@@ -47,7 +47,7 @@
           });
           state ? $(this).hide() : $(this).show();
         });
-      });
+      }, 300);
     }
 
     return this;
@@ -56,5 +56,24 @@
   $.fn.addTableFilter.defaults = {
     labelText: "Keyword(s): ",
     size:      32
+  };
+
+  $.fn.delayBind = function (type, data, func, timeout) {
+    if ($.isFunction(data)) {
+      timeout = func;
+      func    = data;
+      data    = undefined;
+    }
+
+    var self    = this;
+    var wait    = null;
+    var handler = function (e) {
+      clearTimeout(wait);
+      wait = setTimeout(function() {
+        func.apply(self, [$.extend({}, e)]);
+      }, timeout);
+    };
+
+    return this.bind(type, data, handler);
   };
 })(jQuery);
