@@ -1,12 +1,14 @@
 TITLE
 =====
 
-jQuery Plugin: Table Filter - version 0.1.2
+jQuery Plugin: Table Filter - version 0.2
+
 
 DESCRIPTION
 ===========
 
 Insert a input form for filtering table rows dinamically.
+
 
 Usage
 =====
@@ -25,6 +27,7 @@ Insert with custom label text and size:
       labelText: "Filtering Words: ",
       size:      48
     });
+
 
 Styling
 =======
@@ -46,9 +49,8 @@ You can style inserted elements like this:
       background-color: #333333;
     }
 
+
 LICENSE
 =======
 
-Copyright (c) 2009 Kyo Nagashima <kyo@hail2u.net>  
-This library licensed under MIT license:  
-http://opensource.org/licenses/mit-license.php
+MIT: http://hail2u.mit-license.org/2009
