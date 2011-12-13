@@ -1,16 +1,21 @@
-/*!
- * jQuery Plugin: Table Filter - version 0.1.2
- * http://github.com/hail2u/jquery.table-filter
- * Insert a input form for filtering table rows dinamically.
+/**
+ * @preserve jQuery Plugin: Table Filter - version 0.2
  *
- * Copyright (c) 2009 Kyo Nagashima <kyo@hail2u.net>
- * This library licensed under MIT license:
- * http://opensource.org/licenses/mit-license.php
+ * LICENSE: http://hail2u.mit-license.org/2009
  */
 
-(function($) {
+/*jslint indent: 2, browser: true, regexp: true */
+/*global jQuery, $ */
+
+(function ($) {
+  "use strict";
+
   $.fn.addTableFilter = function (options) {
-    var o = $.extend({}, $.fn.addTableFilter.defaults, options);
+    var o = $.extend({}, $.fn.addTableFilter.defaults, options),
+      tgt,
+      id,
+      label,
+      input;
 
     if (this.is("table")) {
       // Generate ID
@@ -19,14 +24,14 @@
           id: "t-" + Math.floor(Math.random() * 99999999)
         });
       }
-      var tgt = this.attr("id");
-      var id = tgt + "-filtering";
+      tgt = this.attr("id");
+      id = tgt + "-filtering";
 
       // Build filtering form
-      var label = $("<label/>").attr({
+      label = $("<label/>").attr({
         "for": id
       }).append(o.labelText);
-      var input = $("<input/>").attr({
+      input = $("<input/>").attr({
         id:   id,
         type: "text",
         size: o.size
@@ -37,15 +42,20 @@
       $("#" + id).delayBind("keyup", function (e) {
         var words = $(this).val().toLowerCase().split(" ");
         $("#" + tgt + " tbody tr").each(function () {
-          var s = $(this).html().toLowerCase().replace(/<.+?>/g, "").replace(/\s+/g, " ");
-          var state = 0;
+          var s = $(this).html().toLowerCase().replace(/<.+?>/g, "").replace(/\s+/g, " "),
+            state = 0;
           $.each(words, function () {
             if (s.indexOf(this) < 0) {
               state = 1;
               return false; // break $.each()
             }
           });
-          state ? $(this).hide() : $(this).show();
+
+          if (state) {
+            $(this).hide();
+          } else {
+            $(this).show();
+          }
         });
       }, 300);
     }
@@ -65,15 +75,15 @@
       data    = undefined;
     }
 
-    var self    = this;
-    var wait    = null;
-    var handler = function (e) {
-      clearTimeout(wait);
-      wait = setTimeout(function() {
-        func.apply(self, [$.extend({}, e)]);
-      }, timeout);
-    };
+    var self  = this,
+      wait    = null,
+      handler = function (e) {
+        clearTimeout(wait);
+        wait = setTimeout(function () {
+          func.apply(self, [$.extend({}, e)]);
+        }, timeout);
+      };
 
     return this.bind(type, data, handler);
   };
-})(jQuery);
+}(jQuery));
