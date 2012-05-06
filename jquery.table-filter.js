@@ -33,7 +33,7 @@
       }).append(o.labelText);
       input = $("<input/>").attr({
         id:   id,
-        type: "text",
+        type: "search",
         size: o.size
       });
       $("<p/>").addClass("formTableFilter").append(label).append(input).insertBefore(this);
