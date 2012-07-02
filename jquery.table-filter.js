@@ -1,5 +1,5 @@
 /**
- * @preserve jQuery Plugin: Table Filter - version 0.2
+ * @preserve jQuery Plugin: Table Filter - version 0.2.1
  *
  * LICENSE: http://hail2u.mit-license.org/2009
  */
