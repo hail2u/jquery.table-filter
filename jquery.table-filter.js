@@ -31,9 +31,8 @@
       label = $("<label/>").attr({
         "for": id
       }).append(o.labelText);
-      input = $("<input/>").attr({
+      input = $("<input type=\"search\"/>").attr({
         id:   id,
-        type: "search",
         size: o.size
       });
       $("<p/>").addClass("formTableFilter").append(label).append(input).insertBefore(this);
