@@ -1,0 +1,22 @@
+{
+  "name": "table-filter",
+  "version": "0.2.1",
+  "title": "Table Filter",
+  "author": {
+    "name": "Kyo Nagashima",
+    "url": "http://hail2u.net/"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://hail2u.mit-license.org/2009"
+    }
+  ],
+  "dependencies": {
+    "jquery": ">=1.5"
+  },
+  "description": "Insert a input form for filtering table rows dynamically.",
+  "homepage": "https://github.com/hail2u/jquery.table-filter",
+  "demo": "http://hail2u.github.io/jquery.table-filter/",
+  "bugs": "https://github.com/hail2u/jquery.table-filter/issues"
+}
