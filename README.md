@@ -1,4 +1,4 @@
-jQuery Plugin: Table Filter v0.2.1
+jQuery Plugin: Table Filter v0.2.2
 ==================================
 
 Insert a input form for filtering table rows dynamically.
