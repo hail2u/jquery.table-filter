@@ -35,7 +35,7 @@
         id:   id,
         size: o.size
       }).on('click', function () {
-          $(this).keyup();
+        $(this).keyup();
       });
       $("<p/>").addClass("formTableFilter").append(label).append(input).insertBefore(this);
 
