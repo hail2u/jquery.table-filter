@@ -34,6 +34,8 @@
       input = $("<input type=\"search\"/>").attr({
         id:   id,
         size: o.size
+      }).on('click', function () {
+          $(this).keyup();
       });
       $("<p/>").addClass("formTableFilter").append(label).append(input).insertBefore(this);
 
